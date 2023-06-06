@@ -1,40 +1,29 @@
-﻿//Задача 3. Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
-//M = 1; N = 5. -> "1, 2, 3, 4, 5"
-//M = 4; N = 8. -> "4, 5, 6, 7, 8"
-Console.WriteLine("Введите число N: ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число M: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"Числа в промежутке между введёными: ");
-PrintDiap(n, m);
-
-void PrintDiap(int n, int m)
-{
-    if (n < m)
-    {
-        Console.WriteLine(n);
-        n++;
-        PrintDiap(n, m);
-    }
-    else if (n > m)
-    {
-        Console.WriteLine(m);
-        m++;
-        PrintDiap(m, n);
-    }
-    else Console.WriteLine(n);
-}
-//Задача 4.Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B с помощью рекурсии.
-
-// Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
-
+﻿// Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с 
+// помощью рекурсии.
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
+Console.WriteLine();
+Console.WriteLine("T A S K   #    1");
+Console.WriteLine("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Числа в промежутке от {n} до 1: ");
+PrintDiap(n);
+
+void PrintDiap(int n)
+{
+    if (n > 1)
+    {
+        Console.Write($"{n}, ");
+        PrintDiap(n - 1);
+    }
+    else Console.WriteLine($"{n}. ");
+}
 
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
-
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
+Console.WriteLine();
+Console.WriteLine("T A S K   #    2");
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 // m = 2, n = 3 -> A(m,n) = 9
