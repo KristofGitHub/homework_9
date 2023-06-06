@@ -16,7 +16,7 @@ void PrintDiap(int n)
         Console.Write($"{n}, ");
         PrintDiap(n - 1);
     }
-    else Console.WriteLine($"{n}. ");
+    else {Console.WriteLine($"{n}. ");}
 }
 
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
@@ -29,31 +29,31 @@ int a = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число B: ");
 int b = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"Числа в промежутке между ними (включительно): ");
-PrintDiapasone(a, b);
+PrintDiapason(a, b);
 int sum = 0;
-int summary = SumDiapasone(a, b, sum);
+int summary = SumDiapason(a, b, sum);
 Console.WriteLine($"Их сумма: {summary}");
 
-void PrintDiapasone(int n, int m)
+void PrintDiapason(int n, int m)
 {
     if (n < m)
     {
         Console.Write($"{n}, ");
-        PrintDiapasone(n + 1, m);
+        PrintDiapason(n + 1, m);
     }
     else if (n > m)
     {
         Console.Write($"{m}, ");
-        PrintDiapasone(n, m + 1);
+        PrintDiapason(n, m + 1);
     }
-    else Console.WriteLine($"{n}. ");
+    else {Console.WriteLine($"{n}. ");}
 }
 
-int SumDiapasone(int n, int m, int sum)
+int SumDiapason(int n, int m, int sum)
 {
-    if (n < m) return sum = n + SumDiapasone(n + 1, m, sum);
-    else if (n > m) return sum = m + SumDiapasone(n, m + 1, sum);
-    else return sum += n;
+    if (n < m) {return sum = n + SumDiapason(n + 1, m, sum);}
+    else if (n > m) {return sum = m + SumDiapason(n, m + 1, sum);}
+    else {return sum += n;}
 }
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
