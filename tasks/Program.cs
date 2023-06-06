@@ -24,7 +24,40 @@ void PrintDiap(int n)
 // M = 4; N = 8. -> 30
 Console.WriteLine();
 Console.WriteLine("T A S K   #    2");
+Console.WriteLine("Введите число A: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число B: ");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Числа в промежутке между ними (включительно): ");
+PrintDiapasone(a, b);
+int sum = 0;
+int summary = SumDiapasone(a, b, sum);
+Console.WriteLine($"Их сумма: {summary}");
+
+void PrintDiapasone(int n, int m)
+{
+    if (n < m)
+    {
+        Console.Write($"{n}, ");
+        PrintDiapasone(n + 1, m);
+    }
+    else if (n > m)
+    {
+        Console.Write($"{m}, ");
+        PrintDiapasone(n, m + 1);
+    }
+    else Console.WriteLine($"{n}. ");
+}
+
+int SumDiapasone(int n, int m, int sum)
+{
+    if (n < m) return sum += SumDiapasone(n + 1, m, sum + 1);
+    else if (n > m) return sum += SumDiapasone(n, m + 1, sum + 1);
+    else return sum += n;
+}
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 // m = 2, n = 3 -> A(m,n) = 9
 // m = 3, n = 2 -> A(m,n) = 29
+Console.WriteLine();
+Console.WriteLine("T A S K   #    3");
